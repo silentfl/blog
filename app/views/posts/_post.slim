@@ -1,0 +1,9 @@
+h1 = post.title
+p = truncate(post.content, length: 500)
+
+.btn-group
+  = link_to 'Read more', post, class: 'btn'
+
+  - if current_user.try(:admin?)
+   = link_to 'Edit', edit_post_path(post), class: 'btn'
+   = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn'
