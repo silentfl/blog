@@ -14,6 +14,6 @@ admin.save!
 10.times do
   admin.posts.create!(
     title: Faker::Lorem.sentence(rand(3..6)),
-    content: Faker::Lorem.paragraph(rand(3..6))
+    content: Faker::Lorem.paragraph(rand(30..60))
   )
 end

@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.string :title
       t.string :content
-      t.datetime :published_at, index: true
 
       t.timestamps null: false
     end
