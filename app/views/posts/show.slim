@@ -1,11 +1,9 @@
 p#notice = notice
 
-p
-  strong Title:
-  = @post.title
-p
-  strong Content:
-  = @post.content
+h1 = @post.title
+p = tag_list(@post)
+
+p = @post.content
 
 .btn-group
   - if current_user.try(:admin?)

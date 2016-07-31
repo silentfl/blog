@@ -11,6 +11,10 @@
     br
     = f.text_field :title, size: 100
   .field
+    = f.label :tags
+    br
+    = f.text_field :tag_list, size: 100, value: @post.tag_list.join(', ')
+  .field
     = f.label :content
     br
     = f.text_area :content, rows: 15, cols: 100

@@ -1,0 +1,5 @@
+h1 
+  | Find #{@posts.size} #{'post'.pluralize(@posts.size)} by tag <b>#{@tag}</b>
+
+- @posts.each do |post|
+  = render 'posts/post', post: post
