@@ -1,0 +1,7 @@
+h1 Categories
+
+- @categories.each do |category|
+  - if category.parent.nil?
+    h3 = link_to category.name, category_path(category.name)
+  - else
+    h4 style='padding-left: 20px' = link_to category.name, category_path(category.name)

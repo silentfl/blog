@@ -1,4 +1,4 @@
-h1 #{'Post'.pluralize(@posts.size)} by tag <b>#{@tag}</b>
+h1 Posts by category <b>#{@category.name}</b>
 
 - @posts.each do |post|
   = render 'posts/post', post: post

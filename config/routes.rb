@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories, only: [:index, :show], param: :name
+
   resources :posts
   devise_for :users
   

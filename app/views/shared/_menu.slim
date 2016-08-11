@@ -5,6 +5,12 @@
       a.navbar-brand href='/' Blog
       ul.nav.navbar-nav
         li = link_to 'Posts', posts_path
+        li = link_to 'Categories', categories_path
+
+      form.navbar-form.navbar-left 
+        .form-group
+          input.form-control type="text" placeholder="Search"
+          button.btn.btn-default type="submit" Submit
 
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
