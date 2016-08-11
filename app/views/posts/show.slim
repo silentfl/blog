@@ -9,3 +9,9 @@ p = @post.content
   - if current_user.try(:admin?)
     = link_to 'Edit', edit_post_path(@post), class: 'btn'
   = link_to 'Back', posts_path, class: 'btn'
+
+.comments
+  - if current_user && current_user.try(:admin)
+    = render 'comments/index_full', comments: @post.comments
+  - else
+    = render 'comments/index', comments: @post.comments.accepted

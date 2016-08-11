@@ -1,0 +1,7 @@
+.row 
+  .col-xs-2
+    b = comment.user.name
+  .col-xs-2 = comment.created_at.strftime("%d.%m.%Y %H:%M:%S")
+  /*.col-xs-1 = link_to '', comment_destroy_path(comment), class: 'glyphicon glyphicon-remove'*/
+
+.row style="padding-bottom: 15px" = comment.text
