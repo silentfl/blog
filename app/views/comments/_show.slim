@@ -1,6 +1,6 @@
 .row 
   .col-xs-2
-    b = comment.user.name
+    b = "#{comment.user ? comment.user.name : 'Guest'}"
   .col-xs-2 = comment.created_at.strftime("%d.%m.%Y %H:%M:%S")
 
 .row style="padding-bottom: 15px" = comment.text

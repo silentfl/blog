@@ -16,3 +16,5 @@ p = @post.content
     = render 'comments/index_full', comments: @post.comments
   - else
     = render 'comments/index', comments: @post.comments.accepted
+
+  == render 'comments/form'

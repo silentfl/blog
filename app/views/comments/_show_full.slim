@@ -1,7 +1,16 @@
 .row 
   .col-xs-2
-    b = comment.user.name
+    b = "#{comment.user ? comment.user.name : 'Guest'}"
+    = comment.status
   .col-xs-2 = comment.created_at.strftime("%d.%m.%Y %H:%M:%S")
-  /*.col-xs-1 = link_to '', comment_destroy_path(comment), class: 'glyphicon glyphicon-remove'*/
+
+  - if comment.status == "pending"
+    .col-xs-1 = link_to '', post_comment_accept_path(@post, comment), method: :put , class: 'glyphicon glyphicon-ok'
+
+  - if comment.status != "decline"
+    .col-xs-1 = link_to '', post_comment_decline_path(@post, comment), method: :put , class: 'glyphicon glyphicon-remove'
+
+  - if comment.status != "removed"
+    .col-xs-1 = link_to '', post_comment_remove_path(@post, comment), method: :delete , class: 'glyphicon glyphicon-trash'
 
 .row style="padding-bottom: 15px" = comment.text
