@@ -43,3 +43,5 @@ tags = Array.new(10) { Faker::Lorem.word }
   end
   post.save!
 end
+
+Post.import

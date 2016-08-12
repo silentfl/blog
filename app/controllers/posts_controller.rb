@@ -37,6 +37,14 @@ class PostsController < ApplicationController
     respond_with(@post)
   end
 
+  def search
+    if params[:q].nil?
+      @posts = []
+    else
+      @posts = Article.search params[:q]
+    end
+  end
+
   private
 
   def set_post

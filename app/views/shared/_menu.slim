@@ -7,10 +7,9 @@
         li = link_to 'Posts', posts_path
         li = link_to 'Categories', categories_path
 
-      form.navbar-form.navbar-left 
-        .form-group
-          input.form-control type="text" placeholder="Search"
-          button.btn.btn-default type="submit" Submit
+      = form_tag '/search', method: :get, class: 'navbar-form navbar-right' do
+        = text_field_tag :q, params[:q], class: 'form-control'
+        = submit_tag 'Search', class: 'btn btn-default'
 
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
@@ -18,3 +17,4 @@
           li = link_to 'Sign out', destroy_user_session_path
         - else
           li = link_to 'Sign in', new_user_session_path
+
