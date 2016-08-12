@@ -11,6 +11,7 @@ p = @post.content
   = link_to 'Back', posts_path, class: 'btn'
 
 .comments
+  h3 Commentaries (#{current_user && current_user.try(:admin?) ? @post.comments.size : @post.comments.accepted.size})
   - if current_user && current_user.try(:admin)
     = render 'comments/index_full', comments: @post.comments
   - else
